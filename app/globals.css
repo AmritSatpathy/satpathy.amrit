@@ -1207,3 +1207,879 @@ h4 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Places page */
+.places-hero {
+  min-height: 100svh;
+}
+
+.places-intro {
+  margin: clamp(58px, 10vh, 110px) auto 0;
+  max-width: 1240px;
+  width: 100%;
+}
+
+.places-intro h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  margin-bottom: 24px;
+}
+
+.places-wrap {
+  margin: 48px auto 0;
+  max-width: 1240px;
+  width: 100%;
+}
+
+.places-toolbar {
+  align-items: center;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.places-stats {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.places-stats strong {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.places-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.places-chip {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--metal);
+  cursor: pointer;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.places-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.places-chip.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.places-unlock,
+.places-add {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--line);
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.places-add-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.places-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.places-field-wide {
+  grid-column: span 2;
+}
+
+.places-field input,
+.places-field select {
+  background: #070707;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  min-height: 46px;
+  padding: 0 12px;
+  width: 100%;
+}
+
+.places-field input:focus,
+.places-field select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.places-field input::placeholder {
+  color: var(--subtle);
+}
+
+.places-add-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.places-hint {
+  color: var(--subtle);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.places-error {
+  color: #ff6b6b;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.places-list {
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+}
+
+.places-card {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-height: 86px;
+  padding: 20px 0;
+}
+
+.places-card.is-visited .places-card-head h3 {
+  color: var(--subtle);
+  text-decoration: line-through;
+}
+
+.places-check {
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.places-check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.places-checkbox {
+  align-items: center;
+  border: 1px solid var(--line-strong);
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  transition: background 160ms ease, border-color 160ms ease;
+  width: 28px;
+}
+
+.places-check input:checked + .places-checkbox {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.places-check input:checked + .places-checkbox::after {
+  color: #050505;
+  content: "\2713";
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+.places-check input:disabled + .places-checkbox {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.places-card-head {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.places-card-head h3 {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  margin: 0;
+}
+
+.places-tag {
+  border: 1px solid var(--line);
+  color: var(--metal);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  text-transform: uppercase;
+}
+
+.places-tag-cafe {
+  border-color: rgba(185, 255, 53, 0.42);
+  color: var(--accent);
+}
+
+.places-meta {
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 0.86rem;
+  margin: 8px 0 0;
+}
+
+.places-meta span + span {
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+
+.places-remove {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--subtle);
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.places-remove:hover {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+@media (max-width: 900px) {
+  .places-add-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .places-field-wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .places-add-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .places-field-wide {
+    grid-column: span 1;
+  }
+
+  .places-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .places-remove {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 4px;
+  }
+}
+
+/* =========================================================
+   Cute theme — scoped entirely to .places-page so the rest
+   of the site keeps its dark/technical look.
+   ========================================================= */
+
+.places-page {
+  --c-bg: #fff6f0;
+  --c-bg-2: #ffeef4;
+  --c-card: #ffffff;
+  --c-ink: #5a4a42;
+  --c-ink-soft: #9b8c84;
+  --c-peach: #ffb4a2;
+  --c-peach-deep: #ff8c69;
+  --c-mint: #a8e6cf;
+  --c-mint-deep: #5fcf9e;
+  --c-lav: #cdb4f6;
+  --c-pink: #ffc2d1;
+  --c-yellow: #ffe3a3;
+
+  background:
+    radial-gradient(1200px 600px at 15% -10%, var(--c-bg-2), transparent 60%),
+    radial-gradient(1000px 500px at 110% 10%, #eef7ff, transparent 55%),
+    var(--c-bg);
+  color: var(--c-ink);
+  font-family:
+    "Nunito", "Quicksand", ui-rounded, "Segoe UI", system-ui, sans-serif;
+}
+
+/* ---- Section wrapper + intro (intro now lives in the sidebar) ---- */
+.places-page .places-section {
+  padding: clamp(28px, 5vw, 64px) clamp(16px, 4vw, 48px);
+}
+
+.places-page .places-intro {
+  margin: 0;
+  text-align: left;
+}
+
+.places-page .eyebrow {
+  color: var(--c-peach-deep);
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 800;
+  justify-content: flex-start;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.places-page .eyebrow::before {
+  background: var(--c-peach);
+  border-radius: 999px;
+  height: 3px;
+  width: 26px;
+  align-self: center;
+}
+
+.places-page .places-intro h1 {
+  color: var(--c-ink);
+  font-size: clamp(2.1rem, 3.4vw, 2.9rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.02;
+  margin: 8px 0 14px;
+  text-transform: none;
+  max-width: none;
+}
+
+.places-page .places-amp {
+  color: var(--c-peach-deep);
+  font-style: italic;
+}
+
+.places-page .places-intro .lead {
+  border-left: 0;
+  color: var(--c-ink-soft);
+  font-size: clamp(0.98rem, 1.4vw, 1.08rem);
+  font-weight: 600;
+  line-height: 1.55;
+  margin: 0;
+  max-width: none;
+  padding-left: 0;
+}
+
+/* ---- Wrap + toolbar ---- */
+.places-page .places-wrap {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.places-page .places-toolbar {
+  align-items: center;
+  background: var(--c-card);
+  border: 0;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(255, 140, 105, 0.12);
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 18px 22px;
+}
+
+.places-page .places-stats {
+  color: var(--c-ink-soft);
+  gap: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.places-page .places-stats strong {
+  color: var(--c-peach-deep);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+/* ---- Filter chips ---- */
+.places-page .places-chip {
+  align-items: center;
+  background: #fff;
+  border: 2px solid var(--c-bg-2);
+  border-radius: 999px;
+  color: var(--c-ink-soft);
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  padding: 9px 12px 9px 16px;
+  text-transform: none;
+}
+
+/* little count badge inside each chip */
+.places-page .places-chip-count {
+  background: var(--c-bg-2);
+  border-radius: 999px;
+  color: var(--c-peach-deep);
+  font-size: 0.78rem;
+  font-weight: 900;
+  min-width: 26px;
+  padding: 2px 8px;
+  text-align: center;
+}
+
+.places-page .places-chip.active .places-chip-count {
+  background: rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+
+.places-page .places-chip:hover {
+  border-color: var(--c-peach);
+  color: var(--c-peach-deep);
+  transform: translateY(-1px);
+}
+
+.places-page .places-chip.active {
+  background: var(--c-peach);
+  border-color: var(--c-peach);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(255, 140, 105, 0.3);
+}
+
+/* ---- Unlock + add cards ---- */
+.places-page .places-unlock,
+.places-page .places-add {
+  background: var(--c-card);
+  border: 0;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(205, 180, 246, 0.14);
+  margin-top: 20px;
+  padding: 26px;
+}
+
+.places-page .card-label {
+  color: var(--c-ink-soft);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.places-page .places-field input,
+.places-page .places-field select {
+  background: var(--c-bg);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  color: var(--c-ink);
+  font-weight: 600;
+  min-height: 48px;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.places-page .places-field input::placeholder {
+  color: #c9bdb6;
+}
+
+.places-page .places-field input:focus,
+.places-page .places-field select:focus {
+  background: #fff;
+  border-color: var(--c-peach);
+}
+
+/* ---- Buttons ---- */
+.places-page .button {
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  min-height: 50px;
+  padding: 0 24px;
+  text-transform: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.places-page .button.primary {
+  background: linear-gradient(135deg, var(--c-peach), var(--c-peach-deep));
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(255, 140, 105, 0.32);
+}
+
+.places-page .button.primary:hover {
+  background: linear-gradient(135deg, var(--c-peach-deep), #ff7a52);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(255, 140, 105, 0.4);
+}
+
+.places-page .button.secondary {
+  background: var(--c-bg-2);
+  color: var(--c-peach-deep);
+}
+
+.places-page .button.secondary:hover {
+  background: var(--c-pink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.places-page .places-hint {
+  color: var(--c-ink-soft);
+  font-weight: 600;
+}
+
+.places-page .places-error {
+  background: #ffe2e2;
+  border-radius: 12px;
+  color: #e5635f;
+  font-weight: 800;
+  padding: 8px 14px;
+}
+
+/* ---- List + cards ---- */
+.places-page .places-list {
+  border-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.places-page .places-card {
+  align-items: center;
+  background: var(--c-card);
+  border: 0;
+  border-bottom: 0;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(90, 74, 66, 0.08);
+  display: grid;
+  flex-shrink: 0;
+  gap: 16px;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  min-height: 84px;
+  padding: 16px 22px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.places-page .places-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(90, 74, 66, 0.14);
+}
+
+.places-page .places-card.is-visited {
+  background: linear-gradient(135deg, #f3fbf6, #eafaf2);
+}
+
+.places-page .places-card.is-visited .places-card-head h3 {
+  color: var(--c-mint-deep);
+  text-decoration: none;
+}
+
+.places-page .places-card.is-visited .places-emoji {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+/* cute emoji badge */
+.places-page .places-emoji {
+  align-items: center;
+  background: var(--c-yellow);
+  border-radius: 16px;
+  display: flex;
+  font-size: 1.5rem;
+  height: 52px;
+  justify-content: center;
+  width: 52px;
+}
+
+.places-page .places-card:nth-child(3n + 1) .places-emoji {
+  background: var(--c-pink);
+}
+.places-page .places-card:nth-child(3n + 2) .places-emoji {
+  background: var(--c-mint);
+}
+.places-page .places-card:nth-child(3n + 3) .places-emoji {
+  background: var(--c-lav);
+}
+
+/* ---- rounded checkbox ---- */
+.places-page .places-checkbox {
+  background: #fff;
+  border: 2px solid var(--c-bg-2);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  transition: all 160ms ease;
+}
+
+.places-page .places-check:hover .places-checkbox {
+  border-color: var(--c-mint-deep);
+}
+
+.places-page .places-check input:checked + .places-checkbox {
+  background: var(--c-mint-deep);
+  border-color: var(--c-mint-deep);
+  transform: scale(1.08);
+}
+
+.places-page .places-check input:checked + .places-checkbox::after {
+  color: #fff;
+  content: "\2713";
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+/* ---- card text ---- */
+.places-page .places-card-head h3 {
+  color: var(--c-ink);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 800;
+  text-transform: none;
+}
+
+.places-page .places-tag {
+  border: 0;
+  border-radius: 999px;
+  color: var(--c-ink-soft);
+  background: var(--c-bg-2);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 5px 11px;
+  text-transform: lowercase;
+}
+
+.places-page .places-tag-cafe {
+  background: #fff0e6;
+  color: var(--c-peach-deep);
+}
+
+.places-page .places-tag-restaurant {
+  background: #eafaf2;
+  color: var(--c-mint-deep);
+}
+
+.places-page .places-meta {
+  color: var(--c-ink-soft);
+  font-weight: 600;
+}
+
+.places-page .places-meta span + span {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.places-page .places-meta span + span::before {
+  color: var(--c-peach);
+  content: "\2022";
+  margin: 0 8px 0 2px;
+}
+
+/* ---- remove button ---- */
+.places-page .places-remove {
+  background: transparent;
+  border: 2px solid var(--c-bg-2);
+  border-radius: 999px;
+  color: var(--c-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  padding: 7px 14px;
+  text-transform: none;
+}
+
+.places-page .places-remove:hover {
+  background: #ffe2e2;
+  border-color: #ffb3b3;
+  color: #e5635f;
+}
+
+@media (max-width: 620px) {
+  .places-page .places-card {
+    grid-template-columns: auto auto minmax(0, 1fr);
+  }
+
+  .places-page .places-remove {
+    grid-column: 3;
+    justify-self: end;
+    margin-top: 0;
+  }
+}
+
+/* =========================================================
+   Places layout: full-bleed cute background + two columns
+   (sticky info sidebar on the left, scrollable list on right)
+   ========================================================= */
+
+/* Base (mobile-first): normal, fully-scrolling page. No viewport lock.
+   The viewport-locked two-column mode is applied only in the wide-screen
+   media query at the bottom of this block. */
+.places-page.page-shell {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+/* A fixed cream layer painted behind everything so no black
+   ever shows on scroll or overscroll. */
+.places-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, var(--c-bg-2), transparent 60%),
+    radial-gradient(1000px 500px at 110% 10%, #eef7ff, transparent 55%),
+    var(--c-bg);
+}
+
+/* ---- Base (mobile-first): single stacked column, normal flow ---- */
+.places-page .places-wrap {
+  display: grid;
+  gap: clamp(20px, 3vw, 40px);
+  grid-template-columns: 1fr;
+  max-width: 1120px;
+  height: auto;
+}
+
+/* Left column: info + controls. Base = normal flow. */
+.places-page .places-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.places-page .places-sidebar .places-toolbar,
+.places-page .places-sidebar .places-unlock,
+.places-page .places-sidebar .places-add {
+  margin-top: 0;
+}
+
+/* Stack the toolbar contents vertically in the narrow sidebar. */
+.places-page .places-sidebar .places-toolbar {
+  align-items: stretch;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.places-page .places-sidebar .places-filters {
+  flex-direction: column;
+}
+
+.places-page .places-sidebar .places-chip {
+  text-align: left;
+}
+
+/* Add form: single column inside the narrow sidebar. */
+.places-page .places-sidebar .places-add-grid {
+  grid-template-columns: 1fr;
+}
+
+.places-page .places-sidebar .places-field-wide {
+  grid-column: 1;
+}
+
+/* Right column. Base = normal flow (list scrolls with the page). */
+.places-page .places-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.places-page .places-main .places-list {
+  margin-top: 0;
+  padding: 4px 10px 4px 4px;
+  /* room so hover lift + shadow aren't clipped */
+}
+
+/* Hide the list scrollbar (still scrollable). */
+.places-page .places-main .places-list {
+  scrollbar-width: none;
+}
+
+.places-page .places-main .places-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---- Wide screens only: viewport-locked two-column layout.
+   Left column fixed, right list column scrolls; page itself does not. ---- */
+@media (min-width: 1001px) {
+  /* Lock the outer page scroll — but only on wide screens AND only when the
+     places page is mounted (scoped via :has so other pages are unaffected).
+     This is pure CSS, so mobile is never touched. */
+  html:has(.places-page),
+  body:has(.places-page) {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .places-page.page-shell {
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .places-page .places-section {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .places-page .places-wrap {
+    grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    height: 100%;
+  }
+
+  /* Left column: fixed, scrolls internally only if taller than viewport. */
+  .places-page .places-sidebar {
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 4px;
+    scrollbar-width: none;
+  }
+
+  .places-page .places-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Right column: the scrolling list. */
+  .places-page .places-main {
+    min-height: 0;
+    height: 100%;
+  }
+
+  .places-page .places-main .places-list {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+  }
+}

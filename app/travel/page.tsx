@@ -89,15 +89,6 @@ export const metadata: Metadata = {
 export default function Travel() {
   return (
     <main className="page-shell travel-fullscreen-map">
-      <nav className="nav" aria-label="Primary navigation">
-        <a className="brand" href="/" aria-label="Amrit Satpathy home">
-          AS
-        </a>
-        <div className="nav-links">
-          <a href="/">Home</a>
-        </div>
-      </nav>
-
       <section className="map-section" aria-label="Visited cities map">
         <div className="map-shell">
           <div className="travel-overlay">
